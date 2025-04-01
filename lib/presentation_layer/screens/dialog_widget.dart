@@ -16,6 +16,59 @@ import 'package:screenshotapp/state_management_layer/pages_provider/select_scree
 import 'package:screenshotapp/state_management_layer/screenshot_manager/screenshot_provider.dart';
 import 'package:screenshotapp/state_management_layer/screenshot_manager/screenshot_settings.dart';
 
+import 'package:screenshotapp/commons/gaps.dart';
+
+class DialogButton extends StatelessWidget {
+  const DialogButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          margin: padding(),
+          width: context.screenWidth,
+          decoration: BoxDecoration(
+            color: AppColors.secondaryColor,
+            borderRadius: borderRadius(radius: 20.0),
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: borderRadius(radius: 20),
+              onTap: () {
+                showScreenshotDialog;
+              },
+              child: Padding(
+                padding: padding(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const FlutterLogo(
+                      size: 100,
+                    ),
+                    context.gapH1,
+                    const Text(
+                      "Show Screenshot Dialog",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: FontFamily.subFont,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 const TextStyle contentStyle = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.bold,

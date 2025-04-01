@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:screenshotapp/presentation_layer/screens/component_widget.dart';
+import 'package:screenshotapp/presentation_layer/screens/dialog_widget.dart';
 import 'package:screenshotapp/presentation_layer/screens/image_widget.dart';
 import 'package:screenshotapp/presentation_layer/screens/screen_widget.dart';
 import 'package:screenshotapp/presentation_layer/screens/scroll_widget.dart';
@@ -30,7 +30,7 @@ List<TapModel> taps = const <TapModel>[
   TapModel(
     icon: Icons.widgets,
     title: "Full Widget",
-    targetWidget: ComponentWidget(),
+    targetWidget: DialogButton(),
   ),
   TapModel(
     icon: Icons.splitscreen_rounded,

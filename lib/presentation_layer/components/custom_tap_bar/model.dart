@@ -29,7 +29,7 @@ List<TapModel> taps = const <TapModel>[
   ),
   TapModel(
     icon: Icons.widgets,
-    title: "Full Widget",
+    title: "Full Dialog",
     targetWidget: DialogButton(),
   ),
   TapModel(

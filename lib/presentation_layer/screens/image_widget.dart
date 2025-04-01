@@ -39,10 +39,6 @@ class ImageWidget extends StatelessWidget {
             imagePath: Paths.mapImage,
             label: "Map Image",
           ),
-          const ImageItem(
-            imagePath: Paths.imageWidget,
-            label: "Palestine",
-          ),
           SizedBox(
             height: context.screenHeight * .17,
           )

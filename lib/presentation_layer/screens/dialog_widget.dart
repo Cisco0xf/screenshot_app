@@ -142,70 +142,50 @@ Future<void> get showScreenshotDialog async {
                                         : null,
                                   ),
                                   child: TakeScreenshot(
-                                    child: TweenAnimationBuilder(
-                                        tween: Tween<double>(
-                                          begin: 0.5,
-                                          end: 1.0,
-                                        ),
-                                        duration: const Duration(
-                                          milliseconds: 300,
-                                        ),
-                                        builder: (context, scale, _) {
-                                          return Transform.scale(
-                                            scale: scale,
-                                            child: Stack(
-                                              children: <Widget>[
-                                                Positioned(
-                                                  bottom: 0.0,
-                                                  right: 20,
-                                                  left: 20,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          bottom: 0.0,
+                                          right: 20,
+                                          left: 20,
+                                          top: 48,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: <Widget>[
+                                              Container(
+                                                width: double.infinity,
+                                                padding: const EdgeInsets.only(
                                                   top: 48,
-                                                  child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: <Widget>[
-                                                      Container(
-                                                        width: double.infinity,
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(
-                                                          top: 48,
-                                                          left: 10.0,
-                                                          bottom: 5.0,
-                                                        ),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: AppColors
-                                                              .primaryColor,
-                                                          borderRadius:
-                                                              borderRadius(
-                                                                  radius: 20),
-                                                        ),
-                                                        child:
-                                                            const DialogContent(),
-                                                      ),
-                                                    ],
-                                                  ),
+                                                  left: 10.0,
+                                                  bottom: 5.0,
                                                 ),
-                                                const Positioned.fill(
-                                                  bottom: null,
-                                                  child: CircleAvatar(
-                                                    radius: 48,
-                                                    backgroundColor:
-                                                        AppColors.primaryColor,
-                                                    child: CircleAvatar(
-                                                      radius: 40,
-                                                      backgroundImage:
-                                                          AssetImage(
-                                                        Paths.profileImage,
-                                                      ),
-                                                    ),
-                                                  ),
+                                                decoration: BoxDecoration(
+                                                  color: AppColors.primaryColor,
+                                                  borderRadius:
+                                                      borderRadius(radius: 20),
                                                 ),
-                                              ],
+                                                child: const DialogContent(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Positioned.fill(
+                                          bottom: null,
+                                          child: CircleAvatar(
+                                            radius: 48,
+                                            backgroundColor:
+                                                AppColors.primaryColor,
+                                            child: CircleAvatar(
+                                              radius: 40,
+                                              backgroundImage: AssetImage(
+                                                Paths.profileImage,
+                                              ),
                                             ),
-                                          );
-                                        }),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

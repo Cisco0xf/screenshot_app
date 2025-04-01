@@ -126,7 +126,8 @@ class MeBody extends StatelessWidget {
             content: contactContent,
           ),
           const Divider(),
-          const MyPlatFormsWidget()
+          const MyPlatFormsWidget(),
+          const ProjectSrcCode(),
         ],
       ),
     );
@@ -316,6 +317,75 @@ class PlatFormWidget extends StatelessWidget {
                     ),
                   ),
                 )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ProjectSrcCode extends StatelessWidget {
+  const ProjectSrcCode({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: 20,
+        horizontal: 20,
+      ),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.white,
+          width: 1.6,
+        ),
+        borderRadius: borderRadius(radius: 5.0),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () async {
+            await LaunchUrl.luanchTargetUrl(
+              target: Paths.srcCodePath,
+            );
+          },
+          child: Padding(
+            padding: padding(),
+            child: Row(
+              children: <Widget>[
+                const FaIcon(FontAwesomeIcons.github, size: 40),
+                SizedBox(
+                  height: context.screenHeight * .07,
+                  child: const VerticalDivider(),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        const FaIcon(FontAwesomeIcons.link, size: 15),
+                        context.gapW2,
+                        const Text(
+                          "Source Code",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Access the project full source code  ",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

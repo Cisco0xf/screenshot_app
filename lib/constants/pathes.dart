@@ -18,4 +18,6 @@ class Paths {
       "https://stackoverflow.com/users/23598383/mahmoud-al-shehyby?tab=profile";
 
   static const String gitHub = "https://github.com/Cisco0xf";
+
+  static const String srcCodePath = "https://github.com/Cisco0xf/screenshot_app.git";
 }

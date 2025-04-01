@@ -25,3 +25,5 @@ const String content6 = "After taking screenshot you can";
 const String content7 = " - Cancel it";
 const String content8 = " - Save it";
 const String content9 = " - Save and Share it";
+
+const String projectTxt = "Access the project full source code";

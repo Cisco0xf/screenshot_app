@@ -377,7 +377,7 @@ class ProjectSrcCode extends StatelessWidget {
                       ],
                     ),
                     const Text(
-                      "Access the project full source code  ",
+                      projectTxt,
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,

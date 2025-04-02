@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-
 class SettingsProvider with ChangeNotifier {
   // Auto Save
   bool autoSave = false;
@@ -22,6 +21,17 @@ class SettingsProvider with ChangeNotifier {
 
     log("Current Show Counter : $showCounter");
 
+    notifyListeners();
+  }
+
+  // Create mute Mode
+
+  bool isMute = false;
+
+  void setSoundValue({
+    required bool target,
+  }) {
+    isMute = target;
     notifyListeners();
   }
 

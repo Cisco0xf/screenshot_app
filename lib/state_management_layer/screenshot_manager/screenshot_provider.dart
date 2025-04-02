@@ -19,15 +19,13 @@ import 'package:screenshotapp/state_management_layer/pages_provider/select_scree
 import 'package:screenshotapp/state_management_layer/screenshot_manager/play_audoi.dart';
 import 'package:screenshotapp/state_management_layer/screenshot_manager/screenshot_settings.dart';
 
-
 class ManageScreenshot with ChangeNotifier {
   // Controller for each target widget
   static final ScreenshotController _fullScreenContrller =
       ScreenshotController();
   static final ScreenshotController scrollController = ScreenshotController();
   static final ScreenshotController _imageController = ScreenshotController();
-  static final ScreenshotController _dialogController =
-      ScreenshotController();
+  static final ScreenshotController _dialogController = ScreenshotController();
 
   // Get the current shown screen from the SelectTargetProvider
 
@@ -130,6 +128,18 @@ class ManageScreenshot with ChangeNotifier {
   }
 
   Future<void> get startShot async {
+    // Check if the Permission is granted
+    bool isPermissionGranted = await requestStoragePermission;
+    if (!isPermissionGranted) {
+      showToastification(
+        msg: "Screenshot needs Storage permissiont to save image.",
+        title: "Permission denied",
+      );
+
+      log("Permission is not granted !!");
+
+      return;
+    }
     showCountDown = true;
     notifyListeners();
     Timer.periodic(
@@ -181,6 +191,8 @@ class ManageScreenshot with ChangeNotifier {
 
   Future<void> get cuptureScreenshot async {
     try {
+      /// I repeated this code in case user change the settings
+      ///  of the controllers while the Permission is not granted
       bool isPermissionGranted = await requestStoragePermission;
       if (!isPermissionGranted) {
         showToastification(
@@ -205,9 +217,13 @@ class ManageScreenshot with ChangeNotifier {
 
       changeBorderState;
 
-      await PlayAudio.play;
-
       // log("Image : $screenshot");
+
+      if (settings.isMute) {
+        log("Cupture Sound is Muted");
+      } else {
+        await PlayAudio.play;
+      }
 
       log("Image Cuptured ...");
 

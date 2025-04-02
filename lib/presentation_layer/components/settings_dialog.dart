@@ -33,6 +33,7 @@ Future<void> get showSettinsDialog async {
                     ),
                   ),
                   context.gapH1,
+                  // Auto Save Controller
                   SettingItem(
                     icon: Icons.data_saver_on_outlined,
                     label: "Auto Save",
@@ -47,6 +48,7 @@ Future<void> get showSettinsDialog async {
                     indent: 10,
                     endIndent: 10,
                   ),
+                  // Show Counter Controller
                   SettingItem(
                     icon: Icons.timer,
                     label: "Show Counter",
@@ -58,9 +60,21 @@ Future<void> get showSettinsDialog async {
                     setValue: controllers.showCounter,
                   ),
                   const Divider(
-                    indent: 10,
                     endIndent: 10,
+                    indent: 10,
                   ),
+                  // Sound Controller
+                  SettingItem(
+                    icon: Icons.music_off_rounded,
+                    label: "Mute Sound",
+                    onSwitch: (isMute) {
+                      controllers.setSoundValue(
+                        target: isMute,
+                      );
+                    },
+                    setValue: controllers.isMute,
+                  ),
+                  const Divider(),
                   const CuptureMethodWidget(),
                   const Divider(),
                   Container(

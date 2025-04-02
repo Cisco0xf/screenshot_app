@@ -179,7 +179,7 @@ Future<void> get showScreenshotDialog async {
                                             child: CircleAvatar(
                                               radius: 40,
                                               backgroundImage: AssetImage(
-                                                Paths.profileImage,
+                                                Paths.image,
                                               ),
                                             ),
                                           ),

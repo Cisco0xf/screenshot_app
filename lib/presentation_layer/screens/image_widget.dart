@@ -30,7 +30,7 @@ class ImageWidget extends StatelessWidget {
             ),
             child: const TakeScreenshot(
               child: ImageItem(
-                imagePath: Paths.profileImage,
+                imagePath: Paths.image,
                 label: "Favorite image",
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:screenshotapp/commons/navigator_key.dart';
 import 'package:screenshotapp/presentation_layer/main_widget.dart';
@@ -7,6 +8,12 @@ import 'package:toastification/toastification.dart';
 
 void main() {
   runApp(const AppRoot());
+
+  SystemChrome.setPreferredOrientations(
+    <DeviceOrientation>[
+      DeviceOrientation.portraitUp,
+    ],
+  );
 }
 
 class AppRoot extends StatelessWidget {
